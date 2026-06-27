@@ -30,13 +30,18 @@
         :height="CANVAS_SIZE"
         class="border border-purple-light/10 shadow-[0_0_30px_rgba(125,72,201,0.2)]"
       />
-
       <p
-        class="p-2 bg-black/50 backdrop-blur-sm mt-4 text-xs text-purple-light/50 tracking-[2px] min-h-4"
+        class="hidden md:block p-2 bg-black/50 backdrop-blur-sm mt-4 text-xs text-purple-light/50 tracking-[2px] min-h-4"
       >
         {{ message }}
       </p>
 
+      <button
+        class="mt-4 px-6 py-2 blocck md:hidden lg:hidden border border-purple-light/40 bg-black/50 backdrop-blur-sm text-purple-light text-xs tracking-[2px] rounded-lg cursor-pointer transition-all duration-300 hover:bg-purple/30 hover:border-purple-light shadow-[0_0_15px_rgba(125,72,201,0.2)] hover:shadow-[0_0_25px_rgba(125,72,201,0.4)]"
+        @click="startGame"
+      >
+        ▸ START_GAME.EXE / REINICIAR
+      </button>
       <div
         class="flex flex-col items-center gap-2 bg-black/50 backdrop-blur-sm p-4 rounded-xl border border-purple-light/10"
       >
@@ -53,9 +58,8 @@
         </div>
       </div>
 
-      <!-- Botão iniciar -->
       <button
-        class="mt-4 px-6 py-2 border border-purple-light/40 bg-black/50 backdrop-blur-sm text-purple-light text-xs tracking-[2px] rounded-lg cursor-pointer transition-all duration-300 hover:bg-purple/30 hover:border-purple-light shadow-[0_0_15px_rgba(125,72,201,0.2)] hover:shadow-[0_0_25px_rgba(125,72,201,0.4)]"
+        class="mt-4 px-6 py-2 hidden md:block border border-purple-light/40 bg-black/50 backdrop-blur-sm text-purple-light text-xs tracking-[2px] rounded-lg cursor-pointer transition-all duration-300 hover:bg-purple/30 hover:border-purple-light shadow-[0_0_15px_rgba(125,72,201,0.2)] hover:shadow-[0_0_25px_rgba(125,72,201,0.4)]"
         @click="startGame"
       >
         ▸ START_GAME.EXE / REINICIAR

@@ -19,8 +19,11 @@
         >
           {{ text }}
         </h1> -->
-        <h1
+        <!-- <h1
           class="bg-gradient-to-r from-purple via-pink-400 to-fuchsia-900 bg-clip-text text-transparent text-4xl md:text-5xl font-bold font-orbitron animate-typewriter overflow-hidden border-r-2 border-purple-light w-fit whitespace-normal md:whitespace-nowrap"
+        > -->
+         <h1
+          class="bg-gradient-to-r from-purple via-pink-400 to-fuchsia-900 bg-clip-text text-transparent text-4xl md:text-5xl font-bold font-orbitron animate-typewriter overflow-hidden whitespace-nowrap border-r-2 border-purple-light w-fit"
         >
           {{ text }}
         </h1>

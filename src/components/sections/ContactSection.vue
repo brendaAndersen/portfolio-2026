@@ -27,25 +27,26 @@
             <p class="text-gray-400 text-xs mb-6 leading-relaxed">
               Canal seguro disponível. <br />
               Nenhuma mensagem perdida na rede. <br />
-              Tempo de resposta: <span class="text-purple-light font-bold">imediato,</span> quando não há ataques cibernéticos. <br />
+              Tempo de resposta: <span class="text-purple-light font-bold">imediato,</span> quando
+              não há ataques cibernéticos. <br />
             </p>
             <p class="fs-8 pb-2">
               <span class="text-purple-light font-bold">Olá!</span> Obrigada pelo interesse, abaixo
               pode entrar em contato! Ah, e não esqueça de verificar meu currículo! <br />
             </p>
-            <div class="flex items-center gap-3 mt-3">
+            <div class="flex flex-col md:flex-row items-center gap-3 mt-3">
               <a
                 :href="whatsappUrl"
                 target="_blank"
-                class="flex-1 flex items-center justify-center hover:animate-glitch gap-2 px-6 py-3 bg-green-600/20 border border-green-500/40 text-green-400 rounded-lg transition-all duration-300 font-medium hover:bg-green-600/40 hover:border-green-400 hover:text-white hover:shadow-[0_0_20px_rgba(34,197,94,0.3)]"
+                class="w-full md:flex-1 flex items-center justify-center gap-2 px-6 py-3 bg-green-600/20 border border-green-500/40 text-green-400 rounded-lg transition-all duration-300 font-medium hover:animate-glitch hover:bg-green-600/40 hover:border-green-400 hover:text-white hover:shadow-[0_0_20px_rgba(34,197,94,0.3)]"
               >
-                <span>▸</span> HACKEAR A MATRIX
+                <span>▸</span> HACKEAR MATRIX
               </a>
 
               <a
                 href="/cv.pdf"
                 download
-                class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-purple/10 border border-purple-light/30 text-purple-light rounded-lg transition-all duration-300 font-medium hover:bg-purple/30 hover:border-purple-light hover:text-white hover:shadow-[0_0_20px_rgba(125,72,201,0.3)]"
+                class="w-full md:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 bg-purple/10 border border-purple-light/30 text-purple-light rounded-lg transition-all duration-300 font-medium hover:bg-purple/30 hover:border-purple-light hover:text-white hover:shadow-[0_0_20px_rgba(125,72,201,0.3)]"
               >
                 <span class="text-xs opacity-60">~$</span> get ./cv.pdf
               </a>
@@ -65,15 +66,18 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 
-const props = withDefaults(defineProps<{
-  isOpen?: boolean
-  phone?: string
-  message?: string
-}>(), {
-  isOpen: false,
-  phone: '5554999999999',
-  message: 'Olá! Vim pelo seu portfolio e gostaria de conversar.',
-})
+const props = withDefaults(
+  defineProps<{
+    isOpen?: boolean
+    phone?: string
+    message?: string
+  }>(),
+  {
+    isOpen: false,
+    phone: '5554999999999',
+    message: 'Olá! Vim pelo seu portfolio e gostaria de conversar.',
+  },
+)
 
 defineEmits<{
   close: []
