@@ -14,8 +14,13 @@
       class="relative z-10 container min-h-200 grid grid-cols-1 md:grid-cols-[1.2fr_0.8fr] lg:grid-cols-[0.9fr_1.1fr] items-center gap-6 lg:gap-10 py-20"
     >
       <div class="flex flex-col items-center md:items-start gap-3 text-center md:text-left">
-        <h1
+        <!-- <h1
           class="bg-gradient-to-r from-purple via-pink-400 to-fuchsia-900 bg-clip-text text-transparent text-4xl md:text-5xl font-bold font-orbitron lg:animate-typewriter animate-slideRight overflow-hidden lg:border-r-2 border-purple-light w-fit whitespace-normal md:whitespace-nowrap"
+        >
+          {{ text }}
+        </h1> -->
+        <h1
+          class="bg-gradient-to-r from-purple via-pink-400 to-fuchsia-900 bg-clip-text text-transparent text-4xl md:text-5xl font-bold font-orbitron animate-typewriter overflow-hidden border-r-2 border-purple-light w-fit whitespace-normal md:whitespace-nowrap"
         >
           {{ text }}
         </h1>
