@@ -44,7 +44,7 @@
               </a>
 
               <a
-                href="/cv.pdf"
+                href="https://drive.google.com/file/d/1cB5hn5P23Vs-V24FR0JQYBMrqdNUgELd/view?usp=sharing"
                 download
                 class="w-full md:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 bg-purple/10 border border-purple-light/30 text-purple-light rounded-lg transition-all duration-300 font-medium hover:bg-purple/30 hover:border-purple-light hover:text-white hover:shadow-[0_0_20px_rgba(125,72,201,0.3)]"
               >
@@ -74,7 +74,7 @@ const props = withDefaults(
   }>(),
   {
     isOpen: false,
-    phone: '5554999999999',
+    phone: '5551984981330',
     message: 'Olá! Vim pelo seu portfolio e gostaria de conversar.',
   },
 )
