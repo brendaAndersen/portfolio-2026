@@ -1,0 +1,24 @@
+{
+  "name": "dev.shell // Portfolio",
+  "short_name": "dev.shell",
+  "description": "Portfolio Fullstack de dev.shell desenvolvido em Vue 3 e Tailwind CSS.",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "/web-app-manifest-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/web-app-manifest-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "theme_color": "#020618",
+  "background_color": "#121214",
+  "display": "standalone",
+  "orientation": "portrait"
+}

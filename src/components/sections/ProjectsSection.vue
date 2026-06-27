@@ -1,5 +1,9 @@
 <template>
-  <section id="projects" class="relative py-10 bg-bg-darker text-white overflow-hidden">
+  <section
+    v-scroll-animate
+    id="projects"
+    class="relative py-10 bg-bg-darker text-white overflow-hidden"
+  >
     <img
       src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=1200"
       alt="Fundo Binário"
@@ -8,7 +12,7 @@
     <div class="container mx-auto px-6">
       <div class="text-center mb-12">
         <h2
-          class="text-3xl font-bold bg-gradient-to-r from-emerald-400 via-emerald-950 to-green-400 bg-clip-text text-transparent"
+          class="text-3xl font-bold bg-gradient-to-r from-emerald-400 via-eerald-950 to-green-400 bg-clip-text text-transparent"
         >
           Meus Projetos
         </h2>
@@ -50,9 +54,17 @@
 
               <RouterLink
                 :to="`/projects/${project.slug}`"
-                class="text-emerald-400 hover:text-green-300 font-medium text-sm transition-colors mt-auto inline-flex items-center gap-1"
+                class="text-emerald-400 hover:text-green-300 font-medium text-sm transition-colors mt-auto inline-flex items-center gap-1 group"
               >
-                Ver detalhes &rarr;
+                <span
+                  class="group-hover:animate-[flicker_1s_ease-in-out_infinite] hover:underline-offset-4 hover:underline"
+                >
+                  Ver detalhes
+                </span>
+                <font-awesome-icon
+                  icon="fa-solid fa-angles-right"
+                  class="group-hover:animate-[nudgeLeft_0.8s_ease-in-out_infinite] ms-2"
+                />
               </RouterLink>
             </div>
           </div>
@@ -72,6 +84,29 @@ import 'swiper/css'
 import 'swiper/css/pagination'
 
 const modules = [Autoplay, Pagination]
+
+const vScrollAnimate = {
+  mounted: (el: HTMLElement) => {
+    el.style.opacity = '0'
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            el.classList.add('animate-slide-right')
+            observer.unobserve(el)
+          }
+        })
+      },
+      {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px',
+      },
+    )
+
+    observer.observe(el)
+  },
+}
 </script>
 
 <style>

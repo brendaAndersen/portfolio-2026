@@ -3,7 +3,8 @@ import HeroSection from '@/components/sections/HeroSection.vue'
 import AboutSection from '@/components/sections/AboutSection.vue'
 import SkillsSection from '@/components/sections/SkillsSection.vue'
 import ProjectsSection from './../components/sections/ProjectsSection.vue'
-import ContactSection from '@/components/sections/ContactSection.vue'
+import SnakeGameSection from '@/components/sections/SnakeGameSection.vue'
+
 </script>
 
 <template>
@@ -11,6 +12,6 @@ import ContactSection from '@/components/sections/ContactSection.vue'
     <AboutSection />
     <ProjectsSection />
     <SkillsSection />
-    <!-- <ContactSection /> -->
+    <SnakeGameSection />
   </main>
 </template>

@@ -2,6 +2,7 @@
 import Atmosphere from '@/components/layout/Atmosphere.vue'
 import Crust from '@/components/layout/Crust.vue'
 import { useLenis } from './composables/useLenis'
+import CursorCyber from './components/CursorCyber.vue';
 useLenis()
 </script>
 
@@ -9,4 +10,5 @@ useLenis()
   <Atmosphere />
   <RouterView />
   <Crust />
+  <CursorCyber />
 </template>

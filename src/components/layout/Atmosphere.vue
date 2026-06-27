@@ -12,6 +12,7 @@ const links = [
   // { label: 'Sobre', href: '#about' },
   { label: 'Projetos', href: '#projects' },
   { label: 'Skills', href: '#skills' },
+  { label: 'Game', href: '#game' },
 ]
 
 function onScroll() {
