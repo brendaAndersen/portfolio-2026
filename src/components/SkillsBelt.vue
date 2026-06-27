@@ -36,13 +36,18 @@
   </section>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref } from 'vue'
 import SkillChip from './SkillChip.vue'
 
+type Skill = {
+  name: string
+  color: string
+}
+
 const pause1 = ref(false)
 const pause2 = ref(false)
-const row1 = [
+const row1: Skill[] = [
   { name: 'Laravel', color: '#FF2D20' },
   { name: 'Node.js', color: '#5FA04E' },
   { name: 'Express', color: '#444444' },
@@ -59,7 +64,7 @@ const row1 = [
   { name: 'Docker', color: '#2496ED' },
 ]
 
-const row2 = [
+const row2: Skill[] = [
   { name: 'Vue 3', color: '#42B883' },
   { name: 'React', color: '#61DAFB' },
   { name: 'Next.js', color: '#000000' },
@@ -72,5 +77,5 @@ const row2 = [
   { name: 'Redis', color: '#DC382D' },
   { name: 'Linux', color: '#FCC624' },
 ]
-const doubled = (arr) => [...arr, ...arr]
+const doubled = (arr: Skill[]) => [...arr, ...arr]
 </script>

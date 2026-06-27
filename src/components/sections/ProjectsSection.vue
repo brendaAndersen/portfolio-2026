@@ -8,7 +8,7 @@
     <div class="container mx-auto px-6">
       <div class="text-center mb-12">
         <h2
-          class="text-3xl font-bold bg-gradient-to-r from-emerald-400 via-eerald-950 to-green-400 bg-clip-text text-transparent"
+          class="text-3xl font-bold bg-gradient-to-r from-emerald-400 via-emerald-950 to-green-400 bg-clip-text text-transparent"
         >
           Meus Projetos
         </h2>
@@ -48,7 +48,7 @@
                 </span>
               </div>
 
-                <RouterLink
+              <RouterLink
                 :to="`/projects/${project.slug}`"
                 class="text-emerald-400 hover:text-green-300 font-medium text-sm transition-colors mt-auto inline-flex items-center gap-1"
               >
@@ -62,7 +62,7 @@
   </section>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { RouterLink } from 'vue-router'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import { Autoplay, Pagination } from 'swiper/modules'

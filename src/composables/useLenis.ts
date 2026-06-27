@@ -2,8 +2,8 @@ import { onMounted, onUnmounted } from 'vue'
 import Lenis from 'lenis'
 
 export function useLenis() {
-  let lenis
-  let rafId
+  let lenis: Lenis | null = null
+  let rafId: number | null = null
 
   onMounted(() => {
     lenis = new Lenis({
@@ -12,8 +12,8 @@ export function useLenis() {
       smoothWheel: true,
     })
 
-    function raf(time) {
-      lenis.raf(time)
+    function raf(time: number) {
+      lenis?.raf(time)
       rafId = requestAnimationFrame(raf)
     }
 
@@ -21,7 +21,9 @@ export function useLenis() {
   })
 
   onUnmounted(() => {
-    cancelAnimationFrame(rafId)
+    if (rafId !== null) {
+      cancelAnimationFrame(rafId)
+    }
     lenis?.destroy()
   })
 }

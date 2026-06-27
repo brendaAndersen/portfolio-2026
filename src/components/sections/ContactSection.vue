@@ -62,22 +62,22 @@
   </Teleport>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { computed } from 'vue'
 
-const props = defineProps({
-  isOpen: Boolean,
-  phone: {
-    type: String,
-    default: '5554999999999',
-  },
-  message: {
-    type: String,
-    default: 'Olá! Vim pelo seu portfolio e gostaria de conversar.',
-  },
+const props = withDefaults(defineProps<{
+  isOpen?: boolean
+  phone?: string
+  message?: string
+}>(), {
+  isOpen: false,
+  phone: '5554999999999',
+  message: 'Olá! Vim pelo seu portfolio e gostaria de conversar.',
 })
 
-defineEmits(['close'])
+defineEmits<{
+  close: []
+}>()
 
 const whatsappUrl = computed(
   () => `https://wa.me/${props.phone}?text=${encodeURIComponent(props.message)}`,

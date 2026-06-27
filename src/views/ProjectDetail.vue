@@ -15,10 +15,12 @@ const allImages = computed(() => {
 })
 
 const activeImage = ref<string | null>(null)
-const activeIndex = computed(() =>
-  allImages.value.indexOf(activeImage.value ?? allImages.value[0])
-)
-const currentImage = computed(() => activeImage.value ?? allImages.value[0])
+const currentImage = computed(() => activeImage.value ?? allImages.value[0] ?? '')
+const activeIndex = computed(() => {
+  const index = allImages.value.indexOf(currentImage.value)
+
+  return index >= 0 ? index : 0
+})
 
 // lightbox
 const lightboxOpen = ref(false)
@@ -32,13 +34,25 @@ function closeLightbox() {
 }
 
 function prevImage() {
+  if (allImages.value.length === 0) return
+
   const i = activeIndex.value
-  activeImage.value = allImages.value[i > 0 ? i - 1 : allImages.value.length - 1]
+  const previousImage = allImages.value[i > 0 ? i - 1 : allImages.value.length - 1]
+
+  if (previousImage) {
+    activeImage.value = previousImage
+  }
 }
 
 function nextImage() {
+  if (allImages.value.length === 0) return
+
   const i = activeIndex.value
-  activeImage.value = allImages.value[i < allImages.value.length - 1 ? i + 1 : 0]
+  const nextImage = allImages.value[i < allImages.value.length - 1 ? i + 1 : 0]
+
+  if (nextImage) {
+    activeImage.value = nextImage
+  }
 }
 </script>
 

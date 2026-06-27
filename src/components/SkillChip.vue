@@ -5,8 +5,13 @@
   </div>
 </template>
 
-<script setup>
-defineProps({ skill: Object })
+<script setup lang="ts">
+defineProps<{
+  skill: {
+    name: string
+    color: string
+  }
+}>()
 </script>
 
 <style scoped>
