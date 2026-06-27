@@ -48,13 +48,12 @@
                 </span>
               </div>
 
-              <a
-                :href="project.link"
-                target="_blank"
+                <RouterLink
+                :to="`/projects/${project.slug}`"
                 class="text-emerald-400 hover:text-green-300 font-medium text-sm transition-colors mt-auto inline-flex items-center gap-1"
               >
-                Visualizar Projeto &rarr;
-              </a>
+                Ver detalhes &rarr;
+              </RouterLink>
             </div>
           </div>
         </swiper-slide>
@@ -64,68 +63,15 @@
 </template>
 
 <script setup>
+import { RouterLink } from 'vue-router'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import { Autoplay, Pagination } from 'swiper/modules'
+import { projects } from '@/data/projects'
 
 import 'swiper/css'
 import 'swiper/css/pagination'
 
 const modules = [Autoplay, Pagination]
-
-const projects = [
-  {
-    id: 1,
-    title: 'Growlympics',
-    description: '',
-    image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=500',
-    techs: ['Next.js', 'Typescript', 'Tailwind', 'Radix UI'],
-    link: 'https://github.com/brendaAndersen/growlympics',
-  },
-  {
-    id: 2,
-    title: 'Dev Life',
-    description:
-      'Painel administrativo para gerenciar sua vida dev. Pode-se cadastrar seus atuais estudos e questões de saúde.',
-    image: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=500',
-    techs: ['Laravel', 'Tailwind CSS', 'Vite'],
-    link: 'github.com/brendaAndersen/dev-life',
-  },
-  {
-    id: 3,
-    title: 'Bot de Automação',
-    description:
-      'Sistema inteligente de bots focado em extração de dados do sistema. Sendo possível comunicar-se com ele através do WhatsApp.',
-    image: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=500',
-    techs: ['Laravel', 'API WhatsApp'],
-    link: '#',
-  },
-  {
-    id: 4,
-    title: 'Tasks Manager',
-    description: 'Um sistema de gerenciamento tarefas com roles de usuário.',
-    image: 'https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=500',
-    techs: ['Next.js', 'FastAPI', 'Tailwind v4', 'SQLite', 'Autenticaçãoo JWT'],
-    link: 'https://github.com/brendaAndersen/afl-tasks',
-  },
-  {
-    id: 5,
-    title: 'Sistema de Ponto',
-    description:
-      'Um sistema de gerenciamento de ponto. Com Next como Front e Backend (CRUD usuário e pontos, downlad dos pontos com Excel e PDF.)',
-    image: 'https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=500',
-    techs: ['Next.js', 'PostgreSQL', 'Tailwind v4'],
-    link: 'https://github.com/brendaAndersen/time-tracking-system',
-  },
-  {
-    id: 6,
-    title: 'Portfolio',
-    description:
-      'Este incrível portfólio utilizando conceitos modernos de design e estilização avançada.',
-    image: 'https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=500',
-    techs: ['Vue 3', 'Tailwind v4'],
-    link: '#',
-  },
-]
 </script>
 
 <style>

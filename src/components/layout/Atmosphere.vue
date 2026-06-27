@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue'
+import { useRouter } from 'vue-router'
 import ContactModal from './../../components/sections/ContactSection.vue'
 
 const isScrolled = ref(false)
 const isMenuOpen = ref(false)
+const router = useRouter()
 
 const links = [
   { label: 'Início', href: '#hero' },
@@ -69,7 +71,11 @@ const scrollTo = (selector: string) => {
     const offsetPosition = elementPosition - getScrollOffset()
 
     scrollToPosition(offsetPosition)
+    return
   }
+
+  isMenuOpen.value = false
+  router.push({ path: '/', hash: selector })
 }
 
 const modalOpen = ref(false)
